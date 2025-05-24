@@ -2,6 +2,7 @@ package org.petya8bachey;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LinkNavigationTest extends BaseTest {
@@ -12,11 +13,11 @@ public class LinkNavigationTest extends BaseTest {
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
 
-        // Переход по ссылке меню
-        driver.findElement(By.id("react-burger-menu-btn")).click();
-        driver.findElement(By.id("about_sidebar_link")).click();
+        // Нажатие кнопки добавления в корзину
+        driver.findElement(By.id("shopping_cart_link")).click();
 
-        // Проверка что перешли на другую страницу
-        assertTrue(driver.getCurrentUrl().contains("saucelabs.com"), "Navigation to about page failed");
+        assertTrue(driver.getCurrentUrl().contains("cart.html"),
+                "Navigation to shopping cart page failed");
+
     }
 }
