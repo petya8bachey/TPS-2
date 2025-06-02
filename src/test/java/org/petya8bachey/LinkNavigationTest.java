@@ -14,7 +14,7 @@ public class LinkNavigationTest extends BaseTest {
         driver.findElement(By.id("login-button")).click();
 
         // Нажатие кнопки добавления в корзину
-        driver.findElement(By.id("shopping_cart_link")).click();
+        driver.findElement(By.className("shopping_cart_link")).click();
 
         assertTrue(driver.getCurrentUrl().contains("cart.html"),
                 "Navigation to shopping cart page failed");
